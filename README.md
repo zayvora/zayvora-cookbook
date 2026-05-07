@@ -120,7 +120,7 @@ node run.js
 - **What it does:** Autonomous research agent transforms natural-language queries into structured, evidence-backed reports
 - **Tech stack:** 10–100 open-access sources, knowledge graph, claim verification
 - **When to use:** Research synthesis, competitive analysis, threat intel
-- **[→ Repository](https://github.com/zayvora/nex)**
+- **[→ Repository](https://github.com/via-decide/nex)**
 
 **Tags:** `research` `rag` `knowledge-graph`
 
@@ -228,7 +228,7 @@ Checklist:
 | **Daxini.xyz** | [daxini.xyz](https://daxini.xyz) | AI Research OS / Command Center |
 | **Daxini.space** | [daxini.space](https://daxini.space) | Spatial OS PWA |
 | **ViaDecide** | [viadecide.com](https://viadecide.com) | Decision Engine — Pipeline-driven reasoning |
-| **Nex** | [github.com/zayvora/nex](https://github.com/zayvora/nex) | Deep Research Engine |
+| **Nex** | [github.com/via-decide/nex](https://github.com/via-decide/nex) | Deep Research Engine |
 | **Orchade** | *coming soon* | Farming game + social OS |
 | **StudyOS** | *coming soon* | AI-native study environment |
 
@@ -261,7 +261,22 @@ Zayvora isn't a tool. It isn't a model.
 
 ## 📄 LICENSE
 
-MIT — Build freely. Ship boldly. Verify relentlessly.
+**GNU General Public License v3.0**
+
+This project is licensed under GPL v3.0. You are free to:
+- ✅ Use commercially
+- ✅ Modify the code
+- ✅ Distribute modified versions
+- ✅ Use for private projects
+
+**With conditions:**
+- 📋 Disclose source code (modified works must be open-source under same license)
+- 📋 Include license and copyright notice
+- 📋 Document changes made
+
+**[Full GPL v3.0 License](./LICENSE)**
+
+**[Learn more about GPL v3.0](https://www.gnu.org/licenses/gpl-3.0.en.html)**
 
 ---
 
