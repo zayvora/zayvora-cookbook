@@ -1,294 +1,297 @@
-# 🧠 Zayvora Stack — Community Cookbook
-
-<div align="center">
-  <img src="https://img.shields.io/badge/Zayvora-Reasoning%20Engine-6366f1?style=for-the-badge&logo=buffer&logoColor=white" alt="Zayvora" />
-  <img src="https://img.shields.io/badge/Status-Active-22c55e?style=for-the-badge" alt="Active" />
-  <img src="https://img.shields.io/badge/Local--First-Sovereign%20AI-f59e0b?style=for-the-badge" alt="Local First" />
-  <img src="https://img.shields.io/badge/Bharat--First-Built%20in%20India-ff6b35?style=for-the-badge" alt="Bharat First" />
-</div>
-
-<br />
-
-<div align="center">
-  <h3>⚙️ Build sovereign AI agents. Run them anywhere. Own your stack.</h3>
-  <p>An open collection of agents, tools, and research templates built on the Zayvora reasoning engine.</p>
-
-  <a href="https://daxini.xyz" target="_blank">
-    <img src="https://img.shields.io/badge/🔥%20Explore%20Zayvora-daxini.xyz-6366f1?style=for-the-badge&labelColor=1f2937" alt="Explore Zayvora" />
-  </a>
-  &nbsp;
-  <a href="https://viadecide.com" target="_blank">
-    <img src="https://img.shields.io/badge/🧭%20ViaDecide-Decision%20Engine-f59e0b?style=for-the-badge&labelColor=1f2937" alt="ViaDecide" />
-  </a>
-</div>
-
-<br />
-
----
-
-## 📋 Table of Contents
-
-- [What is Zayvora?](#-what-is-zayvora)
-- [Quick Start](#-quick-start)
-- [Official Templates](#-official-templates)
-- [Community Agents](#-community-agents)
-- [Community Templates](#-community-templates)
-- [The 6-Stage Reasoning Loop](#-the-6-stage-reasoning-loop)
-- [Contributing](#-contributing)
-- [Leaderboard](#-leaderboard)
-
----
-
-## 🤔 What is Zayvora?
-
-Zayvora is a **local-first, sovereign AI reasoning engine** — a fine-tuned Llama 3.1 8B model running via Ollama, designed to think in structured loops rather than single-shot completions.
-
-Every Zayvora reasoning run goes through **6 stages**:
+# ⚡ ZAYVORA STACK — COMMUNITY COOKBOOK
 
 ```
-Decompose → Retrieve → Synthesize → Calculate → Verify → Revise
+    ███████╗ █████╗ ██╗   ██╗██╗   ██╗ ██████╗ ██████╗  █████╗ 
+    ╚════██║██╔══██╗╚██╗ ██╔╝██║   ██║██╔═══██╗██╔══██╗██╔══██╗
+        ██╔╝███████║ ╚████╔╝ ██║   ██║██║   ██║██████╔╝███████║
+       ██╔╝ ██╔══██║  ╚██╔╝  ╚██╗ ██╔╝██║   ██║██╔══██╗██╔══██║
+      ███████╗██║  ██║   ██║   ╚████╔╝ ╚██████╔╝██║  ██║██║  ██║
+      ╚══════╝╚═╝  ╚═╝   ╚═╝    ╚═══╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+    
+    [ LOCAL-FIRST. SOVEREIGN. SYSTEMS-DRIVEN. ]
 ```
 
-No vendor lock-in. No cloud dependency. Runs on your machine, your server, your infra.
+<div align="center">
 
-**Model handle:** `daxini2404/zayvora` on Ollama
+> **"Prompts are easy. Systems are hard. And that's where the moat is."**
+
+```
+Everything was built.
+Nothing worked.
+
+Until we shifted from UI-first to system-first thinking.
+```
 
 ---
 
-## ⚡ Quick Start
+![Zayvora](https://img.shields.io/badge/%E2%9A%A1-ZAYVORA_REASONING_ENGINE-00ff00?style=for-the-badge&color=00ff00&labelColor=000000)
+![Status](https://img.shields.io/badge/STATUS-LIVE_OPERATIVES-ff00ff?style=for-the-badge&color=ff00ff&labelColor=000000)
+![Sovereignty](https://img.shields.io/badge/SOVEREIGNTY-LOCAL--FIRST-00ffff?style=for-the-badge&color=00ffff&labelColor=000000)
+![Origin](https://img.shields.io/badge/ORIGIN-GANDHIDHAM_%F0%9F%87%AE%F0%9F%87%B3-ffff00?style=for-the-badge&color=ffff00&labelColor=000000)
+
+</div>
+
+---
+
+## 🔴 DISPATCH ALERT
+
+You're looking at the **open collection of agents, tools, and research templates** built on the Zayvora reasoning engine.
+
+**No vendor lock-in. No cloud dependency. No silent failures.**
+
+The system doesn't break. It executes. It verifies. It owns the execution.
+
+<div align="center">
+
+[🌐 ENTER DAXINI.XYZ](https://daxini.xyz) 
+&nbsp; | &nbsp;
+[🎯 VIADECIDE DECISION ENGINE](https://viadecide.com)
+
+</div>
+
+---
+
+## 📡 SYSTEM ARCHITECTURE — WHAT YOU'RE PLUGGING INTO
+
+### The Core Insight
+```
+UI alone ≠ Product
+Screens + Buttons + Dead Routes ≠ System
+
+System = State + Flow + Verification + Ownership
+```
+
+### The 6-Stage Execution Loop
+Every Zayvora agent inherits the same neural architecture:
+
+```
+┌──────────────┐      ┌─────────┐      ┌──────────┐
+│  DECOMPOSE   │─────▶│ RETRIEVE │─────▶│SYNTHESIZE│
+│  (Break      │      │ (Pull    │      │ (Merge   │
+│   down)      │      │ evidence)│      │ data)    │
+└──────────────┘      └─────────┘      └──────────┘
+                                             │
+┌──────────────┐      ┌─────────┐           ▼
+│   REVISE     │◀─────│ VERIFY  │◀────┌──────────┐
+│  (Iterate)   │      │(Check   │     │CALCULATE │
+│              │      │claims)  │     │(Simulate)│
+└──────────────┘      └─────────┘     └──────────┘
+```
+
+| STAGE | FUNCTION | WHAT BREAKS |
+|-------|----------|------------|
+| **DECOMPOSE** | Fractures input into sub-queries, research plan | Poor decomposition = cascade failures |
+| **RETRIEVE** | Pulls evidence from sources (web, docs, APIs, DBs) | Missing sources = hallucinations |
+| **SYNTHESIZE** | Merges evidence into coherent intermediate answer | Contradictions bypass verification |
+| **CALCULATE** | Numerical modeling, simulation, edge-case compute | Silent overflow = wrong numbers |
+| **VERIFY** | Cross-checks claims against source domains, confidence scores | Broken chain-of-evidence = invalid output |
+| **REVISE** | Refines output if verification flags contradictions | No revision loop = garbage in, garbage out |
+
+---
+
+## ⚡ QUICKSTART — PLUG IN
 
 ```bash
-# 1. Pull the Zayvora model
+# 1. PULL THE MODEL
 ollama pull daxini2404/zayvora
 
-# 2. Run a reasoning query
-ollama run daxini2404/zayvora "Analyze the impact of RSU spacing on V2X latency"
+# 2. RUN A QUERY (LOCAL EXECUTION)
+ollama run daxini2404/zayvora \
+  "Analyze RSU spacing impact on V2X latency under DSRC congestion"
 
-# 3. Or clone any template below and start building
+# 3. OR CLONE A TEMPLATE
 git clone https://github.com/zayvora/<template-name>.git
+cd <template-name>
+npm install
+node run.js
 ```
 
 ---
 
-## 💡 Official Templates
+## 🎬 OFFICIAL TEMPLATES — READY-BUILT SYSTEMS
 
 <div align="center">
-  <img src="https://img.shields.io/badge/Official%20Templates-Built%20by%20the%20Core%20Team-4F46E5?style=for-the-badge" alt="Official" />
+
+⚙️ **CORE INFRASTRUCTURE** | Built by the operative team
+
 </div>
 
-<br />
+### **NEX** — Deep Research Engine
+- **What it does:** Autonomous research agent transforms natural-language queries into structured, evidence-backed reports
+- **Tech stack:** 10–100 open-access sources, knowledge graph, claim verification
+- **When to use:** Research synthesis, competitive analysis, threat intel
+- **[→ Repository](https://github.com/zayvora/nex)**
 
-<table>
-  <tr>
-    <th width="200">🎯 Project</th>
-    <th width="400">📝 Description</th>
-    <th width="200">🏷️ Tags</th>
-  </tr>
-  <tr>
-    <td>
-      <a href="https://github.com/zayvora/nex">
-        <img src="https://img.shields.io/badge/nex-1f2937?style=for-the-badge&logo=github" alt="nex" />
-      </a>
-    </td>
-    <td>
-      <b>Nex — Deep Research Engine.</b> Autonomous research agent that transforms a natural-language question into a structured, evidence-backed report by querying 10–100 open-access sources, verifying claims, and building a knowledge graph.
-    </td>
-    <td>
-      <img src="https://img.shields.io/badge/research-blue?style=flat-square" />
-      <img src="https://img.shields.io/badge/rag-purple?style=flat-square" />
-      <img src="https://img.shields.io/badge/knowledge--graph-green?style=flat-square" />
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <a href="https://github.com/zayvora/zayvora-agent">
-        <img src="https://img.shields.io/badge/zayvora--agent-1f2937?style=for-the-badge&logo=github" alt="zayvora-agent" />
-      </a>
-    </td>
-    <td>
-      <b>Base Agent Template.</b> Minimal scaffold for building a Zayvora-powered agent. Includes the 6-stage reasoning loop, tool routing, and streaming output. Fork this to build anything.
-    </td>
-    <td>
-      <img src="https://img.shields.io/badge/agent-blue?style=flat-square" />
-      <img src="https://img.shields.io/badge/scaffold-gray?style=flat-square" />
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <a href="https://github.com/zayvora/zayvora-highway-v2i">
-        <img src="https://img.shields.io/badge/zayvora--highway--v2i-1f2937?style=for-the-badge&logo=github" alt="highway-v2i" />
-      </a>
-    </td>
-    <td>
-      <b>Highway V2I Simulation Lab.</b> Research simulation environment for Vehicle-to-Infrastructure (V2I) communication. Models RSU placement, DSRC/C-V2X latency, and traffic optimization using Zayvora's numerical modeling tools.
-    </td>
-    <td>
-      <img src="https://img.shields.io/badge/simulation-blue?style=flat-square" />
-      <img src="https://img.shields.io/badge/v2i-orange?style=flat-square" />
-      <img src="https://img.shields.io/badge/research-green?style=flat-square" />
-    </td>
-  </tr>
-</table>
-
-<br />
+**Tags:** `research` `rag` `knowledge-graph`
 
 ---
 
-## 🤝 Community Agents
+### **ZAYVORA-AGENT** — Base Agent Scaffold
+- **What it does:** Minimal operational framework for building Zayvora-powered agents
+- **Includes:** The 6-stage reasoning loop, tool routing, streaming output, state management
+- **When to use:** Fork this. Build anything. Everything starts here.
+- **[→ Repository](https://github.com/zayvora/zayvora-agent)**
 
-<div align="center">
-  <p>Agents built by the community using the Zayvora platform.</p>
-  <img src="https://img.shields.io/badge/Community%20Agents-Growing-FF6B6B?style=for-the-badge" alt="Community" />
-</div>
-
-<br />
-
-<table>
-  <thead>
-    <tr>
-      <th>Agent</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td colspan="2" align="center"><i>Be the first. <a href="#-contributing">Submit your agent →</a></i></td>
-    </tr>
-  </tbody>
-</table>
+**Tags:** `agent` `scaffold` `framework`
 
 ---
 
-## 🚀 Community Templates
+### **ZAYVORA-HIGHWAY-V2I** — Simulation Lab
+- **What it does:** Research sandbox for Vehicle-to-Infrastructure (V2I) communication modeling
+- **Capability:** RSU placement optimization, DSRC/C-V2X latency analysis, traffic simulation
+- **When to use:** Connected vehicle research, wireless protocol testing, infrastructure planning
+- **[→ Repository](https://github.com/zayvora/zayvora-highway-v2i)**
 
-<div align="center">
-  <img src="https://img.shields.io/badge/Community%20Templates-Open%20for%20Submissions-22c55e?style=for-the-badge" alt="Community Templates" />
-</div>
-
-<br />
-
-<table>
-  <tr>
-    <th width="200">🎯 Project</th>
-    <th width="100">⭐ Stars</th>
-    <th width="400">📝 Description</th>
-    <th width="150">🏷️ Tags</th>
-  </tr>
-  <tr>
-    <td colspan="4" align="center"><i>Submit a PR with your project to get listed here.</i></td>
-  </tr>
-</table>
-
-<br />
+**Tags:** `simulation` `v2i` `connected-vehicles`
 
 ---
 
-## 🔄 The 6-Stage Reasoning Loop
+## 🌐 COMMUNITY OPERATIVES — YOUR AGENTS HERE
 
-Every agent built on Zayvora inherits this reasoning architecture:
+Agents built by the community. Running on the Zayvora stack.
 
-```
-┌─────────────┐     ┌──────────┐     ┌───────────┐
-│  Decompose  │────▶│ Retrieve │────▶│ Synthesize│
-└─────────────┘     └──────────┘     └───────────┘
-                                            │
-┌─────────────┐     ┌──────────┐           ▼
-│   Revise    │◀────│  Verify  │◀────┌───────────┐
-└─────────────┘     └──────────┘     │ Calculate │
-                                     └───────────┘
-```
-
-| Stage | What it does |
-|-------|-------------|
-| **Decompose** | Breaks the query into sub-questions and a research plan |
-| **Retrieve** | Pulls evidence from configured sources (web, local docs, APIs) |
-| **Synthesize** | Merges evidence into a coherent intermediate answer |
-| **Calculate** | Runs numerical / simulation tools when needed |
-| **Verify** | Cross-checks claims against source domains, assigns confidence |
-| **Revise** | Refines the output if verification flags contradictions |
+| AGENT | DESCRIPTION | TAGS |
+|-------|-------------|------|
+| — | *First operative wins recognition.* [Submit yours →](#-contribute) | — |
 
 ---
 
-## 🤝 Contributing
+## 📚 COMMUNITY TEMPLATES — YOUR SYSTEMS HERE
 
-We welcome agents, tools, research templates, and integrations.
+| PROJECT | ⭐ | DESCRIPTION | TAGS |
+|---------|----|----|------|
+| — | — | *Submit a PR with your build.* | — |
 
-### How to Contribute
+---
 
-1. **Fork this repo** and create your feature branch
-2. **Build your project** using the Zayvora agent scaffold or Nex as a base
-3. **Add these topics** to your repository:
-   - `zayvora-community`
-   - `zayvora-<your-domain>` (e.g. `zayvora-research`, `zayvora-agent`, `zayvora-simulation`)
-4. **Make your repo public**
-5. **Submit a pull request** to this repo adding your entry to the Community Templates table
+## 🛠️ WHAT MOST BUILDERS MISS
 
-### Topic Tag System
+They think: `UI + Prompt = Product`
+
+Real systems need:
+- **Memory** (state persistence, ownership chains)
+- **Flow** (routing that doesn't collapse, logic layers)
+- **Validation** (did it actually work? Is the output valid?)
+- **Ownership** (who executes what, who owns the failure?)
+
+**You cannot prompt-engineer your way out of bad architecture.**
+
+---
+
+## 📖 CONTRIBUTION PROTOCOL
+
+### How to Submit Your Build
+
+1. **Fork or create** your repo using the Zayvora agent scaffold
+2. **Add these topics** to GitHub:
+   - `zayvora-community` (required)
+   - `zayvora-<domain>` (research / agent / simulation / education / b2b / hardware)
+3. **Make repo public**
+4. **Submit PR** to this cookbook updating the Community Templates table
+
+### Domain Tags
 
 | Domain | Tag |
 |--------|-----|
 | Research & RAG | `zayvora-research` |
 | Autonomous agents | `zayvora-agent` |
-| Simulation | `zayvora-simulation` |
-| Education | `zayvora-education` |
-| B2B / automation | `zayvora-b2b` |
-| Hardware / IoT | `zayvora-hardware` |
+| Simulation & modeling | `zayvora-simulation` |
+| Education & learning | `zayvora-education` |
+| Business automation | `zayvora-b2b` |
+| Hardware / IoT / embedded | `zayvora-hardware` |
 
-### Troubleshooting
+### Troubleshooting Submissions
 
 <details>
-<summary><b>My contribution doesn't appear in the list</b></summary>
+<summary><b>🔴 My contribution isn't listed</b></summary>
 
-Check the following:
-
-- ✅ Repository is set to **public**
-- ✅ Added topic **`zayvora-community`** to your repo
-- ✅ Submitted a PR to this repo updating the Community Templates table
-- ✅ If still missing, [raise an issue](https://github.com/zayvora/awesome-zayvora/issues/new)
+Checklist:
+- ✅ Repository is **PUBLIC**
+- ✅ Topic **`zayvora-community`** is added
+- ✅ PR submitted updating Community Templates
+- ✅ Still missing? [Raise an issue](https://github.com/zayvora/zayvora-cookbook/issues/new)
 
 </details>
 
 ---
 
-## 🏆 Leaderboard
+## 🏆 LEADERBOARD — TOP OPERATIVES
 
-See top contributors and most-forked community templates:
-
-👉 [View Leaderboard](./leaderboard/README.md)
+**[View the rankings →](./leaderboard/README.md)**
 
 ---
 
-## 🔗 Zayvora Ecosystem
+## 🌍 THE ZAYVORA ECOSYSTEM
 
-| Product | Link | Description |
-|---------|------|-------------|
-| Daxini.xyz | [daxini.xyz](https://daxini.xyz) | AI Research OS / Mothership portal |
-| Daxini.space | [daxini.space](https://daxini.space) | Spatial OS PWA |
-| ViaDecide | [viadecide.com](https://viadecide.com) | Decision Engine |
-| Nex | [github.com/zayvora/nex](https://github.com/zayvora/nex) | Deep Research Engine |
-| Orchade | coming soon | Farming game + social OS |
-| StudyOS | coming soon | AI-native study environment |
+| SYSTEM | LINK | FUNCTION |
+|--------|------|----------|
+| **Daxini.xyz** | [daxini.xyz](https://daxini.xyz) | AI Research OS / Command Center |
+| **Daxini.space** | [daxini.space](https://daxini.space) | Spatial OS PWA |
+| **ViaDecide** | [viadecide.com](https://viadecide.com) | Decision Engine — Pipeline-driven reasoning |
+| **Nex** | [github.com/zayvora/nex](https://github.com/zayvora/nex) | Deep Research Engine |
+| **Orchade** | *coming soon* | Farming game + social OS |
+| **StudyOS** | *coming soon* | AI-native study environment |
 
 ---
 
-## 📄 License
+## 🔗 WHY THIS STACK
 
-MIT — build freely, ship boldly.
+```
+BEFORE                          AFTER
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Screens                         Connected Pipeline
+Buttons                         Routing Fixed
+Routes (broken)                 Auth Flows Real
+Auth (missing)                  Webhook Logging
+Webhooks (silent fail)          State Engine
+No state                        Execution Verified
+```
+
+**The shift:** From `UI → Buttons → Dead Ends` to `Input → Logic → Execution → Verify → Output`
+
+Zayvora isn't a tool. It isn't a model.
+
+**It's a SYSTEM.**
+- Pipeline-driven reasoning
+- Local-first execution
+- Ownership built in
+- Sovereign by design
+
+---
+
+## 📄 LICENSE
+
+MIT — Build freely. Ship boldly. Verify relentlessly.
 
 ---
 
 <div align="center">
-  <h3>⚙️ Ready to build something sovereign?</h3>
 
-  <a href="https://daxini.xyz">
-    <img src="https://img.shields.io/badge/Get%20Started-daxini.xyz-6366f1?style=for-the-badge&logo=rocket&logoColor=white" alt="Get Started" />
-  </a>
+### 🎯 READY TO BUILD SOMETHING SOVEREIGN?
 
-  <br /><br />
+**[JACK IN → daxini.xyz](https://daxini.xyz)**
 
-  <p>Built with 🔥 from Kutch, India — for the world.</p>
+---
 
-  <img src="https://img.shields.io/github/stars/zayvora/awesome-zayvora?style=social" alt="Stars" />
-  &nbsp;
-  <img src="https://img.shields.io/github/forks/zayvora/awesome-zayvora?style=social" alt="Forks" />
+```
+Built from Gandhidham, India. 🇮🇳
+
+No perfect setup.
+No big team.
+No venture backing.
+
+Just: breaking things, understanding systems, 
+fixing deeper each time.
+```
+
+⚡ **The real gap isn't AI capability. It's system design. And that's where everything changes.** ⚡
+
+**[Stars](https://github.com/zayvora/zayvora-cookbook) · [Forks](https://github.com/zayvora/zayvora-cookbook/fork) · [Issues](https://github.com/zayvora/zayvora-cookbook/issues)**
+
 </div>
+
+---
+
+**LAST JAILBREAK:** May 7, 2026  
+**STATUS:** LIVE AND SOVEREIGN  
+**BUILT FOR:** Operatives who build systems, not just interfaces
