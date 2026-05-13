@@ -1,312 +1,473 @@
-# ⚡ ZAYVORA STACK — COMMUNITY COOKBOOK
+# Zayvora Cookbook
 
-```
-    ███████╗ █████╗ ██╗   ██╗██╗   ██╗ ██████╗ ██████╗  █████╗ 
-    ╚════██║██╔══██╗╚██╗ ██╔╝██║   ██║██╔═══██╗██╔══██╗██╔══██╗
-        ██╔╝███████║ ╚████╔╝ ██║   ██║██║   ██║██████╔╝███████║
-       ██╔╝ ██╔══██║  ╚██╔╝  ╚██╗ ██╔╝██║   ██║██╔══██╗██╔══██║
-      ███████╗██║  ██║   ██║   ╚████╔╝ ╚██████╔╝██║  ██║██║  ██║
-      ╚══════╝╚═╝  ╚═╝   ╚═╝    ╚═══╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
-    
-    [ LOCAL-FIRST. SOVEREIGN. SYSTEMS-DRIVEN. ]
-```
+> Raw experiments in continuity-native software.
 
-<div align="center">
+Not a SaaS.  
+Not a chatbot wrapper.  
+Not another dashboard.
 
-> **"Prompts are easy. Systems are hard. And that's where the moat is."**
+This repository explores:
 
-```
-Everything was built.
-Nothing worked.
-
-Until we shifted from UI-first to system-first thinking.
-```
+- continuity-native systems
+- replayable software
+- authority-bound state
+- local-first orchestration
+- sovereign workstations
+- plugin-native ecosystems
+- continuity verification infrastructure
 
 ---
 
-![Zayvora](https://img.shields.io/badge/%E2%9A%A1-ZAYVORA_REASONING_ENGINE-00ff00?style=for-the-badge&color=00ff00&labelColor=000000)
-![Status](https://img.shields.io/badge/STATUS-LIVE_OPERATIVES-ff00ff?style=for-the-badge&color=ff00ff&labelColor=000000)
-![Sovereignty](https://img.shields.io/badge/SOVEREIGNTY-LOCAL--FIRST-00ffff?style=for-the-badge&color=00ffff&labelColor=000000)
-![Origin](https://img.shields.io/badge/ORIGIN-GANDHIDHAM_%F0%9F%87%AE%F0%9F%87%B3-ffff00?style=for-the-badge&color=ffff00&labelColor=000000)
+# What Is Zayvora?
 
-</div>
+Zayvora is an exploration into:
 
----
+```text
+personal sovereignty infrastructure
 
-## 🔴 DISPATCH ALERT
+The goal is not:
 
-You're looking at the **open collection of agents, tools, and research templates** built on the Zayvora reasoning engine.
+“better AI chat”
 
-**No vendor lock-in. No cloud dependency. No silent failures.**
+“another productivity app”
 
-The system doesn't break. It executes. It verifies. It owns the execution.
+“more dashboards”
 
-<div align="center">
 
-[🌐 ENTER DAXINI.XYZ](https://daxini.xyz) 
-&nbsp; | &nbsp;
-[🎯 VIADECIDE DECISION ENGINE](https://viadecide.com)
+The goal is:
 
-</div>
+software that preserves continuity
+across runtime, hardware, orchestration,
+and infrastructure evolution
+
 
 ---
 
-## 📡 SYSTEM ARCHITECTURE — WHAT YOU'RE PLUGGING INTO
+Core Thesis
 
-### The Core Insight
-```
-UI alone ≠ Product
-Screens + Buttons + Dead Routes ≠ System
+Most software today is:
 
-System = State + Flow + Verification + Ownership
-```
+session-fragmented
 
-### The 6-Stage Execution Loop
-Every Zayvora agent inherits the same neural architecture:
+cloud-dependent
 
-```
-┌──────────────┐      ┌─────────┐      ┌──────────┐
-│  DECOMPOSE   │─────▶│ RETRIEVE │─────▶│SYNTHESIZE│
-│  (Break      │      │ (Pull    │      │ (Merge   │
-│   down)      │      │ evidence)│      │ data)    │
-└──────────────┘      └─────────┘      └──────────┘
-                                             │
-┌──────────────┐      ┌─────────┐           ▼
-│   REVISE     │◀─────│ VERIFY  │◀────┌──────────┐
-│  (Iterate)   │      │(Check   │     │CALCULATE │
-│              │      │claims)  │     │(Simulate)│
-└──────────────┘      └─────────┘     └──────────┘
-```
+vendor-controlled
 
-| STAGE | FUNCTION | WHAT BREAKS |
-|-------|----------|------------|
-| **DECOMPOSE** | Fractures input into sub-queries, research plan | Poor decomposition = cascade failures |
-| **RETRIEVE** | Pulls evidence from sources (web, docs, APIs, DBs) | Missing sources = hallucinations |
-| **SYNTHESIZE** | Merges evidence into coherent intermediate answer | Contradictions bypass verification |
-| **CALCULATE** | Numerical modeling, simulation, edge-case compute | Silent overflow = wrong numbers |
-| **VERIFY** | Cross-checks claims against source domains, confidence scores | Broken chain-of-evidence = invalid output |
-| **REVISE** | Refines output if verification flags contradictions | No revision loop = garbage in, garbage out |
+operationally opaque
+
+continuity-destructive
+
+
+Zayvora explores a different model:
+
+continuity-native
+local-first
+replay-aware
+authority-governed
+user-owned
+
 
 ---
 
-## ⚡ QUICKSTART — PLUG IN
+The Architectural Split
 
-```bash
-# 1. PULL THE MODEL
-ollama pull daxini2404/zayvora
+Zayvora separates:
 
-# 2. RUN A QUERY (LOCAL EXECUTION)
-ollama run daxini2404/zayvora \
-  "Analyze RSU spacing impact on V2X latency under DSRC congestion"
+Operational Execution
+    ↓ transient
+    ↓ replaceable
+    ↓ runtime-specific
 
-# 3. OR CLONE A TEMPLATE
-git clone https://github.com/zayvora/<template-name>.git
-cd <template-name>
-npm install
-node run.js
-```
+Canonical Continuity
+    ↓ replay-verifiable
+    ↓ authority-bound
+    ↓ admissibility-governed
 
----
+This separation is the foundation of the ecosystem.
 
-## 🎬 OFFICIAL TEMPLATES — READY-BUILT SYSTEMS
-
-<div align="center">
-
-⚙️ **CORE INFRASTRUCTURE** | Built by the operative team
-
-</div>
-
-### **NEX** — Deep Research Engine
-- **What it does:** Autonomous research agent transforms natural-language queries into structured, evidence-backed reports
-- **Tech stack:** 10–100 open-access sources, knowledge graph, claim verification
-- **When to use:** Research synthesis, competitive analysis, threat intel
-- **[→ Repository](https://github.com/via-decide/nex)**
-
-**Tags:** `research` `rag` `knowledge-graph`
 
 ---
 
-### **ZAYVORA-AGENT** — Base Agent Scaffold
-- **What it does:** Minimal operational framework for building Zayvora-powered agents
-- **Includes:** The 6-stage reasoning loop, tool routing, streaming output, state management
-- **When to use:** Fork this. Build anything. Everything starts here.
-- **[→ Repository](https://github.com/zayvora/zayvora-agent)**
+What This Repository Contains
 
-**Tags:** `agent` `scaffold` `framework`
+1. CEA (Canonical Execution Architecture)
 
----
+Exploration into:
 
-### **ZAYVORA-HIGHWAY-V2I** — Simulation Lab
-- **What it does:** Research sandbox for Vehicle-to-Infrastructure (V2I) communication modeling
-- **Capability:** RSU placement optimization, DSRC/C-V2X latency analysis, traffic simulation
-- **When to use:** Connected vehicle research, wireless protocol testing, infrastructure planning
-- **[→ Repository](https://github.com/zayvora/zayvora-highway-v2i)**
+admissible continuity evolution
 
-**Tags:** `simulation` `v2i` `connected-vehicles`
+replay legality
 
----
+divergence classification
 
-## 🌐 COMMUNITY OPERATIVES — YOUR AGENTS HERE
+authority continuity
 
-Agents built by the community. Running on the Zayvora stack.
+lineage verification
 
-| AGENT | DESCRIPTION | TAGS |
-|-------|-------------|------|
-| — | *First operative wins recognition.* [Submit yours →](#-contribute) | — |
+recoverable state semantics
+
+
+CEA does NOT freeze execution.
+
+CEA freezes:
+
+continuity admissibility
+
 
 ---
 
-## 📚 COMMUNITY TEMPLATES — YOUR SYSTEMS HERE
+2. VAJRA
 
-| PROJECT | ⭐ | DESCRIPTION | TAGS |
-|---------|----|----|------|
-| — | — | *Submit a PR with your build.* | — |
+Immutable continuity envelope substrate.
 
----
+Explores:
 
-## 🛠️ WHAT MOST BUILDERS MISS
+Merkle commitments
 
-They think: `UI + Prompt = Product`
+causation windows
 
-Real systems need:
-- **Memory** (state persistence, ownership chains)
-- **Flow** (routing that doesn't collapse, logic layers)
-- **Validation** (did it actually work? Is the output valid?)
-- **Ownership** (who executes what, who owns the failure?)
+partial-order continuity
 
-**You cannot prompt-engineer your way out of bad architecture.**
+admissibility classification
 
----
+deferred lineage
 
-## 📖 CONTRIBUTION PROTOCOL
+replay legality
 
-### How to Submit Your Build
 
-1. **Fork or create** your repo using the Zayvora agent scaffold
-2. **Add these topics** to GitHub:
-   - `zayvora-community` (required)
-   - `zayvora-<domain>` (research / agent / simulation / education / b2b / hardware)
-3. **Make repo public**
-4. **Submit PR** to this cookbook updating the Community Templates table
-
-### Domain Tags
-
-| Domain | Tag |
-|--------|-----|
-| Research & RAG | `zayvora-research` |
-| Autonomous agents | `zayvora-agent` |
-| Simulation & modeling | `zayvora-simulation` |
-| Education & learning | `zayvora-education` |
-| Business automation | `zayvora-b2b` |
-| Hardware / IoT / embedded | `zayvora-hardware` |
-
-### Troubleshooting Submissions
-
-<details>
-<summary><b>🔴 My contribution isn't listed</b></summary>
-
-Checklist:
-- ✅ Repository is **PUBLIC**
-- ✅ Topic **`zayvora-community`** is added
-- ✅ PR submitted updating Community Templates
-- ✅ Still missing? [Raise an issue](https://github.com/zayvora/zayvora-cookbook/issues/new)
-
-</details>
 
 ---
 
-## 🏆 LEADERBOARD — TOP OPERATIVES
+3. APORAKSHA
 
-**[View the rankings →](./leaderboard/README.md)**
+Authority infrastructure.
 
----
+Explores:
 
-## 🌍 THE ZAYVORA ECOSYSTEM
+NFC authority
 
-| SYSTEM | LINK | FUNCTION |
-|--------|------|----------|
-| **Daxini.xyz** | [daxini.xyz](https://daxini.xyz) | AI Research OS / Command Center |
-| **Daxini.space** | [daxini.space](https://daxini.space) | Spatial OS PWA |
-| **ViaDecide** | [viadecide.com](https://viadecide.com) | Decision Engine — Pipeline-driven reasoning |
-| **Nex** | [github.com/via-decide/nex](https://github.com/via-decide/nex) | Deep Research Engine |
-| **Orchade** | *coming soon* | Farming game + social OS |
-| **StudyOS** | *coming soon* | AI-native study environment |
+trust continuity
 
----
+authority layering
 
-## 🔗 WHY THIS STACK
+device sovereignty
 
-```
-BEFORE                          AFTER
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Screens                         Connected Pipeline
-Buttons                         Routing Fixed
-Routes (broken)                 Auth Flows Real
-Auth (missing)                  Webhook Logging
-Webhooks (silent fail)          State Engine
-No state                        Execution Verified
-```
+verification semantics
 
-**The shift:** From `UI → Buttons → Dead Ends` to `Input → Logic → Execution → Verify → Output`
+continuity identity
 
-Zayvora isn't a tool. It isn't a model.
 
-**It's a SYSTEM.**
-- Pipeline-driven reasoning
-- Local-first execution
-- Ownership built in
-- Sovereign by design
 
 ---
 
-## 📄 LICENSE
+4. HANUMAN
 
-**GNU General Public License v3.0**
+Continuity orchestration substrate.
 
-This project is licensed under GPL v3.0. You are free to:
-- ✅ Use commercially
-- ✅ Modify the code
-- ✅ Distribute modified versions
-- ✅ Use for private projects
+Explores:
 
-**With conditions:**
-- 📋 Disclose source code (modified works must be open-source under same license)
-- 📋 Include license and copyright notice
-- 📋 Document changes made
+replayable orchestration
 
-**[Full GPL v3.0 License](./LICENSE)**
+continuity-aware execution
 
-**[Learn more about GPL v3.0](https://www.gnu.org/licenses/gpl-3.0.en.html)**
+migration coordination
 
----
+distributed continuity
 
-<div align="center">
+recovery orchestration
 
-### 🎯 READY TO BUILD SOMETHING SOVEREIGN?
 
-**[JACK IN → daxini.xyz](https://daxini.xyz)**
 
 ---
 
-```
-Built from Gandhidham, India. 🇮🇳
+Long-Term Direction
 
-No perfect setup.
-No big team.
-No venture backing.
+The long-term direction is not: “users consuming SaaS”
 
-Just: breaking things, understanding systems, 
-fixing deeper each time.
-```
+The long-term direction is:
 
-⚡ **The real gap isn't AI capability. It's system design. And that's where everything changes.** ⚡
+users constructing
+their own software worlds
 
-**[Stars](https://github.com/zayvora/zayvora-cookbook) · [Forks](https://github.com/zayvora/zayvora-cookbook/fork) · [Issues](https://github.com/zayvora/zayvora-cookbook/issues)**
+Examples:
 
-</div>
+personal CRMs
+
+sovereign music players
+
+offline AI notebooks
+
+replayable research systems
+
+family operating systems
+
+continuity-preserving memory systems
+
+local AI workstations
+
+
 
 ---
 
-**LAST JAILBREAK:** May 7, 2026  
-**STATUS:** LIVE AND SOVEREIGN  
-**BUILT FOR:** Operatives who build systems, not just interfaces
+Ecosystem Layers
+
+zayvora
+    continuity substrate
+
+daxini.xyz
+    sovereign workstation layer
+
+logichub.app
+    orchestration runtime
+
+aporaksha.com
+    authority infrastructure
+
+daxini.space
+    ecosystem market
+
+hanuman.solutions
+    migration + activation layer
+
+
+---
+
+Design Principles
+
+Continuity Over Sessions
+
+State should survive:
+
+runtime replacement
+
+orchestration evolution
+
+hardware migration
+
+infrastructure collapse
+
+
+
+---
+
+Replay Over Snapshots
+
+Snapshots are insufficient.
+
+Continuity must be:
+
+reconstructible
+
+verifiable
+
+admissible
+
+replay-aware
+
+
+
+---
+
+Primitives Over Dashboards
+
+The focus is:
+
+validators
+
+contracts
+
+manifests
+
+replay fixtures
+
+plugin interfaces
+
+orchestration primitives
+
+
+before polished UI.
+
+
+---
+
+Local-First Over Cloud-First
+
+Hosting is convenience.
+
+Not dependency.
+
+
+---
+
+Ecosystems Over SaaS
+
+The goal is not: “one application”
+
+The goal is: a composable software ecosystem.
+
+
+---
+
+Current Repository State
+
+This repository is intentionally:
+
+raw
+
+infrastructural
+
+experimental
+
+deeply opinionated
+
+
+Expect:
+
+rewrites
+
+unstable interfaces
+
+adversarial scenarios
+
+incomplete systems
+
+architectural pivots
+
+
+The current phase focuses on:
+
+continuity primitives
+
+validator architecture
+
+canonical contracts
+
+replay verification
+
+authority semantics
+
+
+
+---
+
+What This Repository Is NOT
+
+Not:
+
+enterprise-ready software
+
+polished UX
+
+AI wrapper tooling
+
+cloud lock-in infrastructure
+
+generic productivity software
+
+
+This repository exists to explore:
+
+continuity-native software infrastructure
+
+
+---
+
+Why Open Source?
+
+Ecosystems emerge from:
+
+extensibility
+
+composability
+
+shared primitives
+
+plugin surfaces
+
+hacker experimentation
+
+
+Not paywalls.
+
+
+---
+
+Future Direction
+
+Potential future layers:
+
+plugin SDK
+
+workstation templates
+
+continuity profiles
+
+replay validators
+
+migration adapters
+
+authority verification tools
+
+sovereign deployment packs
+
+
+
+---
+
+Who This Might Interest
+
+People interested in:
+
+systems engineering
+
+local-first software
+
+distributed systems
+
+replay systems
+
+orchestration runtimes
+
+plugin ecosystems
+
+infrastructure primitives
+
+continuity verification
+
+sovereign software
+
+
+
+---
+
+Contributing
+
+Contributors are welcome.
+
+Especially people exploring:
+
+validators
+
+replayability
+
+orchestration
+
+continuity law
+
+local-first infrastructure
+
+plugin systems
+
+authority semantics
+
+
+
+---
+
+Final Thought
+
+The future may not belong to: people renting dashboards.
+
+It may belong to: people constructing their own software civilizations.
+
+
