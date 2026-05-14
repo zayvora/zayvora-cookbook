@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zayvora Cookbook - Continuity Runtime Infrastructure</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: #050505;
+      --surface: #0f0f0f;
+      --border: #1e1e1e;
+      --text: #f5f5f5;
+      --muted: #888888;
+      --accent: #ff7a18;
+      --grid: 16px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'IBM Plex Mono', 'Geist Mono', 'Courier New', monospace;
+      font-size: 14px;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--bg);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: var(--accent);
+      border-radius: 4px;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+    a:hover {
+      border-bottom-color: var(--accent);
+    }
+
+    /* ============= GRID SYSTEM ============= */
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 var(--grid);
+    }
+
+    /* ============= HERO ============= */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(circle at 20% 50%, rgba(255, 122, 24, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255, 122, 24, 0.03) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      animation: fadeInUp 0.8s ease;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.02em;
+      color: var(--accent);
+    }
+
+    .hero .subtext {
+      font-size: 1.1rem;
+      color: var(--muted);
+      margin-bottom: 3rem;
+      line-height: 1.8;
+    }
+
+    /* Terminal block */
+    .terminal-block {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 0;
+      padding: 1.5rem;
+      margin: 2rem 0;
+      text-align: left;
+      font-size: 0.9rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+    }
+
+    .terminal-block::before {
+      content: '$ ';
+      color: var(--accent);
+      font-weight: bold;
+      margin-right: 0.5rem;
+    }
+
+    .terminal-line {
+      margin: 0.75rem 0;
+      color: var(--text);
+    }
+
+    .terminal-line::before {
+      content: '$ ';
+      color: var(--accent);
+      margin-right: 0.5rem;
+    }
+
+    /* CTA Buttons */
+    .cta-group {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      border: 1px solid var(--accent);
+      background: transparent;
+      color: var(--accent);
+      font-family: inherit;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      background: var(--accent);
+      color: var(--bg);
+      transform: translateY(-2px);
+    }
+
+    .btn.primary {
+      background: var(--accent);
+      color: var(--bg);
+    }
+
+    .btn.primary:hover {
+      background: var(--text);
+      color: var(--bg);
+    }
+
+    /* ============= SECTION SHIFTS ============= */
+    section {
+      padding: 6rem var(--grid);
+      border-bottom: 1px solid var(--border);
+    }
+
+    section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 3rem;
+      color: var(--text);
+      letter-spacing: -0.01em;
+    }
+
+    /* ============= THE SHIFT ============= */
+    .shift-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      max-width: 1000px;
+    }
+
+    .shift-column {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .shift-column h3 {
+      font-size: 1rem;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.5rem;
+    }
+
+    .shift-item {
+      padding: 1rem;
+      background: var(--surface);
+      border-left: 2px solid var(--accent);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    /* ============= ECOSYSTEM GRAPH ============= */
+    .ecosystem-graph {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .ecosystem-node {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 1.5rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ecosystem-node::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .ecosystem-node:hover {
+      border-color: var(--accent);
+      transform: translateY(-4px);
+      box-shadow: 0 0 20px rgba(255, 122, 24, 0.1);
+    }
+
+    .ecosystem-node:hover::before {
+      opacity: 1;
+    }
+
+    .ecosystem-node .name {
+      font-weight: bold;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+    }
+
+    .ecosystem-node .role {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .ecosystem-node .description {
+      font-size: 0.9rem;
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    /* ============= USE CASES ============= */
+    .use-cases-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .use-case {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 2rem;
+      transition: all 0.3s ease;
+    }
+
+    .use-case:hover {
+      border-color: var(--accent);
+      transform: translateY(-4px);
+    }
+
+    .use-case h3 {
+      color: var(--accent);
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+
+    .use-case p {
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    /* ============= PLUGIN MODEL ============= */
+    .plugin-flow {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin-top: 2rem;
+      max-width: 900px;
+    }
+
+    .flow-step {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 1.5rem;
+      text-align: center;
+      position: relative;
+    }
+
+    .flow-step.arrow::after {
+      content: '→';
+      position: absolute;
+      right: -1.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--accent);
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .flow-step.arrow:last-child::after {
+      display: none;
+    }
+
+    .flow-step.highlight {
+      background: rgba(255, 122, 24, 0.05);
+      border-color: var(--accent);
+    }
+
+    .flow-step .label {
+      font-weight: bold;
+      color: var(--accent);
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+    }
+
+    .flow-step .description {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* ============= MANIFESTO ============= */
+    .manifesto {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 3rem;
+      max-width: 700px;
+      margin: 3rem 0;
+    }
+
+    .manifesto p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+      color: var(--text);
+    }
+
+    .manifesto strong {
+      color: var(--accent);
+    }
+
+    /* ============= FOOTER ============= */
+    footer {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: 2rem var(--grid);
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    footer a {
+      margin: 0 0.5rem;
+    }
+
+    /* ============= ANIMATIONS ============= */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateX(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .slide-in {
+      animation: slideIn 0.6s ease;
+    }
+
+    /* ============= RESPONSIVE ============= */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .shift-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .plugin-flow {
+        grid-template-columns: 1fr;
+      }
+
+      .flow-step.arrow::after {
+        content: '↓';
+        right: 50%;
+        bottom: -1.5rem;
+        transform: translateX(50%);
+      }
+
+      section {
+        padding: 3rem var(--grid);
+      }
+
+      section h2 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============= HERO ============= -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Composable Sovereign Software Infrastructure</h1>
+      
+      <p class="subtext">
+        Zayvora is an open-source continuity runtime for building replayable, 
+        authority-aware, plugin-native personal software systems.
+      </p>
+
+      <div class="terminal-block">
+        <div class="terminal-line">continuity survives runtime evolution</div>
+        <div class="terminal-line">replay > opacity</div>
+        <div class="terminal-line">plugins declare guarantees</div>
+        <div class="terminal-line">authority is portable</div>
+        <div class="terminal-line">local-first is default</div>
+      </div>
+
+      <div class="cta-group">
+        <a href="README.md" class="btn primary">Read Architecture</a>
+        <a href="#ecosystem" class="btn">Explore Worlds</a>
+        <a href="#plugins" class="btn">Build Plugin</a>
+        <a href="https://github.com/zayvora/zayvora-cookbook" class="btn">Open Cookbook</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============= THE SHIFT ============= -->
+  <section>
+    <div class="container">
+      <h2>From SaaS dashboards<br>to sovereign software worlds.</h2>
+
+      <div class="shift-grid">
+        <div class="shift-column">
+          <h3>Old World</h3>
+          <div class="shift-item">rented dashboards</div>
+          <div class="shift-item">cloud dependency</div>
+          <div class="shift-item">opaque automation</div>
+          <div class="shift-item">isolated apps</div>
+          <div class="shift-item">vendor lock</div>
+        </div>
+
+        <div class="shift-column">
+          <h3>Zayvora</h3>
+          <div class="shift-item">continuity-owned systems</div>
+          <div class="shift-item">local-first runtime</div>
+          <div class="shift-item">replayable lineage</div>
+          <div class="shift-item">composable worlds</div>
+          <div class="shift-item">portable continuity</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============= ECOSYSTEM ============= -->
+  <section id="ecosystem">
+    <div class="container">
+      <h2>The Sovereign Stack</h2>
+      <p style="color: var(--muted); margin-bottom: 2rem;">
+        Interconnected infrastructure layers. Each is independently deployable. 
+        All are continuity-aware.
+      </p>
+
+      <div class="ecosystem-graph">
+        <div class="ecosystem-node">
+          <div class="name">zayvora</div>
+          <div class="role">Continuity Substrate</div>
+          <div class="description">
+            Runtime for recording, replaying, and verifying replayable decisions. 
+            The foundation.
+          </div>
+        </div>
+
+        <div class="ecosystem-node">
+          <div class="name">aporaksha.com</div>
+          <div class="role">Authority Fabric</div>
+          <div class="description">
+            Tracks decision lineage. Who decided. When. With what version. 
+            Verifiable authority chain.
+          </div>
+        </div>
+
+        <div class="ecosystem-node">
+          <div class="name">logichub.app</div>
+          <div class="role">Orchestration Runtime</div>
+          <div class="description">
+            Composes plugins and decision-makers. Maintains continuity across 
+            multiple operations.
+          </div>
+        </div>
+
+        <div class="ecosystem-node">
+          <div class="name">daxini.xyz</div>
+          <div class="role">Workstation Layer</div>
+          <div class="description">
+            Personal software interfaces. Plugin-native. Authority-scoped. 
+            Replayable workflows.
+          </div>
+        </div>
+
+        <div class="ecosystem-node">
+          <div class="name">daxini.space</div>
+          <div class="role">Ecosystem Market</div>
+          <div class="description">
+            Plugin discovery, validation, and sharing. Continuity-certified 
+            extensions.
+          </div>
+        </div>
+
+        <div class="ecosystem-node">
+          <div class="name">hanuman.solutions</div>
+          <div class="role">Activation Layer</div>
+          <div class="description">
+            Bridges sovereign infrastructure to real-world deployment. 
+            Integration patterns.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============= USE CASES ============= -->
+  <section>
+    <div class="container">
+      <h2>Build your own software civilization.</h2>
+      <p style="color: var(--muted); margin-bottom: 2rem;">
+        Not wrappers on rented APIs. Systems you own, audit, and migrate.
+      </p>
+
+      <div class="use-cases-grid">
+        <div class="use-case">
+          <h3>Personal CRM</h3>
+          <p>
+            Relationship continuity. Replayable communication patterns. 
+            Authority-scoped access to your social graph. Portable across devices.
+          </p>
+        </div>
+
+        <div class="use-case">
+          <h3>Research Workspace</h3>
+          <p>
+            Local AI reasoning. Continuity-preserving notes. Replayable thought 
+            graphs. Verifiable sources and lineage.
+          </p>
+        </div>
+
+        <div class="use-case">
+          <h3>Family OS</h3>
+          <p>
+            Authority profiles for each member. Shared lineage history. Recovery 
+            continuity. What happened and who decided.
+          </p>
+        </div>
+
+        <div class="use-case">
+          <h3>Sovereign Music Player</h3>
+          <p>
+            AI playlists run locally. Offline continuity. Portable recommendation 
+            memory. No cloud dependency.
+          </p>
+        </div>
+
+        <div class="use-case">
+          <h3>Offline AI Runtime</h3>
+          <p>
+            Portable execution environment. Plugin-native. Replayable state. 
+            Own your model, own your data.
+          </p>
+        </div>
+
+        <div class="use-case">
+          <h3>Autonomous Task System</h3>
+          <p>
+            AI agent that operates under your authority. Every decision recorded. 
+            Replayable reasoning. You override at any point.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============= PLUGIN MODEL ============= -->
+  <section id="plugins">
+    <div class="container">
+      <h2>Plugins with continuity guarantees.</h2>
+      <p style="color: var(--muted); margin-bottom: 2rem;">
+        Traditional plugins are black boxes. Zayvora plugins declare their contracts.
+      </p>
+
+      <div class="plugin-flow">
+        <div class="flow-step arrow">
+          <div class="label">Plugin</div>
+          <div class="description">Declares what it does</div>
+        </div>
+
+        <div class="flow-step arrow">
+          <div class="label">Validator</div>
+          <div class="description">Checks guarantees</div>
+        </div>
+
+        <div class="flow-step arrow highlight">
+          <div class="label">Continuity Contract</div>
+          <div class="description">Signed commitment</div>
+        </div>
+
+        <div class="flow-step">
+          <div class="label">Safe Execution</div>
+          <div class="description">Verified lineage</div>
+        </div>
+      </div>
+
+      <div style="margin-top: 3rem; background: var(--surface); border: 1px solid var(--border); padding: 2rem;">
+        <p style="color: var(--muted); margin-bottom: 1rem;">Plugins declare:</p>
+        <ul style="list-style: none; color: var(--text);">
+          <li style="margin: 0.5rem 0;">→ Mutation scope (what they can change)</li>
+          <li style="margin: 0.5rem 0;">→ Replay compatibility (can they be re-run?)</li>
+          <li style="margin: 0.5rem 0;">→ Authority requirements (who can invoke them?)</li>
+          <li style="margin: 0.5rem 0;">→ Continuity guarantees (state preservation)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============= OPEN SOURCE ============= -->
+  <section>
+    <div class="container">
+      <h2>Infrastructure should be inspectable.</h2>
+
+      <div class="manifesto">
+        <p>
+          The entire runtime is <strong>open</strong>. Not just code. The validators. 
+          The authority profiles. The replay fixtures. The manifest contracts.
+        </p>
+        <p>
+          You can <strong>fork it</strong>. <strong>Audit it</strong>. 
+          <strong>Run it locally</strong>. <strong>Extend it</strong>.
+        </p>
+        <p style="color: var(--accent);">
+          That's the core philosophy. Infrastructure you own is infrastructure 
+          you can trust.
+        </p>
+      </div>
+
+      <h3 style="margin-top: 2rem; color: var(--accent); text-transform: uppercase; letter-spacing: 0.1em;">Quick Links</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1rem;">
+        <div style="background: var(--surface); border: 1px solid var(--border); padding: 1.5rem;">
+          <a href="https://github.com/zayvora/zayvora-cookbook">GitHub Repository</a><br>
+          <span style="color: var(--muted); font-size: 0.85rem;">Source code + examples</span>
+        </div>
+        <div style="background: var(--surface); border: 1px solid var(--border); padding: 1.5rem;">
+          <a href="README.md">Architecture Guide</a><br>
+          <span style="color: var(--muted); font-size: 0.85rem;">Deep technical reference</span>
+        </div>
+        <div style="background: var(--surface); border: 1px solid var(--border); padding: 1.5rem;">
+          <a href="#plugins">Plugin SDK</a><br>
+          <span style="color: var(--muted); font-size: 0.85rem;">Build extensions</span>
+        </div>
+        <div style="background: var(--surface); border: 1px solid var(--border); padding: 1.5rem;">
+          <a href="https://github.com/via-decide/via-decide">Via Ecosystem</a><br>
+          <span style="color: var(--muted); font-size: 0.85rem;">Broader infrastructure</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============= FINAL MANIFESTO ============= -->
+  <section>
+    <div class="container">
+      <h2 style="margin-bottom: 2rem;">The future is composable personal software.</h2>
+
+      <div class="manifesto">
+        <p style="font-size: 1.2rem;">Not <strong>rented dashboards</strong>.</p>
+        <p style="margin-top: 1.5rem; margin-bottom: 0;">
+          <strong>Continuity-native systems</strong> users can actually own, verify, 
+          migrate, and extend.
+        </p>
+        <p style="margin-top: 1.5rem; color: var(--muted);">
+          This is the substrate. Build on it.
+        </p>
+      </div>
+
+      <div style="margin-top: 3rem; padding: 2rem; background: var(--surface); border: 1px solid var(--border); text-align: center;">
+        <p style="color: var(--muted); margin-bottom: 1rem;">Made by builders. For builders.</p>
+        <a href="https://github.com/zayvora/zayvora-cookbook" class="btn primary">
+          Star on GitHub
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============= FOOTER ============= -->
+  <footer>
+    <p>
+      Zayvora Cookbook &mdash; 
+      <a href="https://github.com/zayvora">@zayvora</a> &mdash; 
+      <a href="LICENSE">MIT</a> &mdash;
+      Infrastructure for sovereign software
+    </p>
+    <p style="margin-top: 1rem; font-size: 0.8rem; color: #555;">
+      Part of the <a href="https://aporaksha.com">Aporaksha Stack</a>
+    </p>
+  </footer>
+
+  <script>
+    // Intersection Observer for scroll animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('slide-in');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    // Observe all ecosystem nodes and use case cards
+    document.querySelectorAll('.ecosystem-node, .use-case, .flow-step').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Smooth scroll for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+
+    // Terminal animation on load
+    window.addEventListener('load', () => {
+      const terminalLines = document.querySelectorAll('.terminal-line');
+      terminalLines.forEach((line, index) => {
+        line.style.opacity = '0';
+        line.style.animation = `fadeInUp 0.6s ease ${0.1 + index * 0.1}s forwards`;
+      });
+    });
+  </script>
+
+</body>
+</html>
